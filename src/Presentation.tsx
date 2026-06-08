@@ -1,4 +1,3 @@
-import React from 'react';
 import { Deck, Markdown } from '@revealjs/react';
 import { SlideLayout, SplitSlide } from './components/SlideLayout';
 import 'reveal.js/dist/reveal.css';
