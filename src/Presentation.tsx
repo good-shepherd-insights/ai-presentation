@@ -1,17 +1,17 @@
 import { Deck, Markdown } from '@revealjs/react';
 import { SlideLayout, SplitSlide } from './components/SlideLayout';
-import 'reveal.js/dist/reveal.css';
+import 'reveal.js/reveal.css';
 import './theme-tokens.css';
 import './theme.css';
 
 // Slide content imports
-import titleContent from './slides/00-title.md';
-import modelsContent from './slides/01-models.md';
-import harnessesContent from './slides/02-harnesses.md';
-import integrationsContent from './slides/03-integrations.md';
-import infrastructureContent from './slides/04-infrastructure.md';
-import workflowsContent from './slides/05-workflows.md';
-import closingContent from './slides/06-closing.md';
+import { html as titleContent } from './slides/00-title.md';
+import { html as modelsContent } from './slides/01-models.md';
+import { html as harnessesContent } from './slides/02-harnesses.md';
+import { html as integrationsContent } from './slides/03-integrations.md';
+import { html as infrastructureContent } from './slides/04-infrastructure.md';
+import { html as workflowsContent } from './slides/05-workflows.md';
+import { html as closingContent } from './slides/06-closing.md';
 
 // Graphics
 import AiEnginesGraphic from './assets/ai-engines.svg';
