@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none">
+  <defs>
+    <linearGradient id="engineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#056251;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f4d3b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a8f6e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#056251;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="innerShadow">
+      <feOffset dx="0" dy="2"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feComposite operator="out" in="SourceGraphic"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.25 0"/>
+      <feBlend in2="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs>
+
+  <!-- Background glow -->
+  <circle cx="300" cy="220" r="180" fill="#3a8f6e" opacity="0.1" filter="url(#glow)"/>
+
+  <!-- Main engine body - gear shape -->
+  <g transform="translate(300,220)">
+    <!-- Outer gear ring -->
+    <circle cx="0" cy="0" r="120" fill="url(#engineGrad)" filter="url(#innerShadow)"/>
+    <circle cx="0" cy="0" r="120" stroke="#3a8f6e" stroke-width="2" fill="none"/>
+    <circle cx="0" cy="0" r="100" stroke="#3a8f6e" stroke-width="1" fill="none" opacity="0.5"/>
+
+    <!-- Gear teeth -->
+    <g fill="url(#engineGrad)" stroke="#3a8f6e" stroke-width="1.5">
+      <rect x="-12" y="-145" width="24" height="30" rx="4"/>
+      <rect x="-12" y="115" width="24" height="30" rx="4"/>
+      <rect x="-145" y="-12" width="30" height="24" rx="4"/>
+      <rect x="115" y="-12" width="30" height="24" rx="4"/>
+      <!-- Diagonal teeth -->
+      <rect x="-102" y="-102" width="20" height="20" rx="3" transform="rotate(-45)"/>
+      <rect x="82" y="-102" width="20" height="20" rx="3" transform="rotate(45)"/>
+      <rect x="-102" y="82" width="20" height="20" rx="3" transform="rotate(45)"/>
+      <rect x="82" y="82" width="20" height="20" rx="3" transform="rotate(-45)"/>
+    </g>
+
+    <!-- Inner circle with AI text -->
+    <circle cx="0" cy="0" r="70" fill="#0a3d2e" stroke="#3a8f6e" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#ffb966" stroke-width="1" opacity="0.4"/>
+
+    <!-- AI/LLM text in center -->
+    <text x="0" y="-8" text-anchor="middle" font-family="Syne, sans-serif" font-size="28" font-weight="700" fill="#FFB966">AI</text>
+    <text x="0" y="18" text-anchor="middle" font-family="Jost, sans-serif" font-size="14" font-weight="500" fill="#E6E8EF" opacity="0.8">ENGINES</text>
+  </g>
+
+  <!-- Connection lines from center to logos -->
+  <g stroke="#ffb966" stroke-width="1.5" opacity="0.6">
+    <line x1="180" y1="100" x2="85" y2="60"/>
+    <line x1="420" y1="100" x2="515" y2="60"/>
+    <line x1="160" y1="280" x2="70" y2="380"/>
+    <line x1="440" y1="280" x2="530" y2="380"/>
+  </g>
+
+  <!-- LLM Logo holders -->
+  <!-- Top-left: Anthropic -->
+  <g transform="translate(40,20)">
+    <rect x="0" y="0" width="90" height="70" rx="10" fill="#1a1a2e" stroke="#3a8f6e" stroke-width="1" opacity="0.9"/>
+    <text x="45" y="48" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" font-weight="600" fill="#E6E8EF">Claude</text>
+    <circle cx="45" cy="25" r="10" fill="#FFB966" opacity="0.2"/>
+    <text x="45" y="29" text-anchor="middle" font-family="Syne, sans-serif" font-size="14" font-weight="700" fill="#FFB966">A</text>
+  </g>
+
+  <!-- Top-right: OpenAI -->
+  <g transform="translate(470,20)">
+    <rect x="0" y="0" width="90" height="70" rx="10" fill="#1a1a2e" stroke="#3a8f6e" stroke-width="1" opacity="0.9"/>
+    <text x="45" y="48" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" font-weight="600" fill="#E6E8EF">GPT-4o</text>
+    <circle cx="45" cy="25" r="10" fill="#FFB966" opacity="0.2"/>
+    <text x="45" y="29" text-anchor="middle" font-family="Syne, sans-serif" font-size="14" font-weight="700" fill="#FFB966">O</text>
+  </g>
+
+  <!-- Bottom-left: Google -->
+  <g transform="translate(30,340)">
+    <rect x="0" y="0" width="90" height="70" rx="10" fill="#1a1a2e" stroke="#3a8f6e" stroke-width="1" opacity="0.9"/>
+    <text x="45" y="48" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" font-weight="600" fill="#E6E8EF">Gemini</text>
+    <circle cx="45" cy="25" r="10" fill="#FFB966" opacity="0.2"/>
+    <text x="45" y="29" text-anchor="middle" font-family="Syne, sans-serif" font-size="14" font-weight="700" fill="#FFB966">G</text>
+  </g>
+
+  <!-- Bottom-right: Meta -->
+  <g transform="translate(480,340)">
+    <rect x="0" y="0" width="90" height="70" rx="10" fill="#1a1a2e" stroke="#3a8f6e" stroke-width="1" opacity="0.9"/>
+    <text x="45" y="48" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" font-weight="600" fill="#E6E8EF">Llama 3</text>
+    <circle cx="45" cy="25" r="10" fill="#FFB966" opacity="0.2"/>
+    <text x="45" y="29" text-anchor="middle" font-family="Syne, sans-serif" font-size="14" font-weight="700" fill="#FFB966">M</text>
+  </g>
+
+  <!-- Decorative dots -->
+  <circle cx="80" cy="200" r="3" fill="#FFB966" opacity="0.4"/>
+  <circle cx="520" cy="200" r="3" fill="#FFB966" opacity="0.4"/>
+  <circle cx="300" cy="430" r="3" fill="#FFB966" opacity="0.4"/>
+
+  <!-- Outer ring label -->
+  <text x="300" y="470" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" fill="#6A7282" letter-spacing="0.15em">FLAGSHIP MODELS</text>
+</svg>

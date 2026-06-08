@@ -6,13 +6,16 @@ import './theme-tokens.css';
 import './theme.css';
 
 // Slide content imports
-import titleContent from '../slides/00-title.md';
-import modelsContent from '../slides/01-models.md';
-import harnessesContent from '../slides/02-harnesses.md';
-import integrationsContent from '../slides/03-integrations.md';
-import infrastructureContent from '../slides/04-infrastructure.md';
-import workflowsContent from '../slides/05-workflows.md';
-import closingContent from '../slides/06-closing.md';
+import titleContent from './slides/00-title.md';
+import modelsContent from './slides/01-models.md';
+import harnessesContent from './slides/02-harnesses.md';
+import integrationsContent from './slides/03-integrations.md';
+import infrastructureContent from './slides/04-infrastructure.md';
+import workflowsContent from './slides/05-workflows.md';
+import closingContent from './slides/06-closing.md';
+
+// Graphics
+import AiEnginesGraphic from './assets/ai-engines.svg';
 
 const deckConfig = {
   width: 1280,
@@ -34,8 +37,8 @@ export default function Presentation() {
         <Markdown>{titleContent}</Markdown>
       </SlideLayout>
 
-      {/* Slide 1: AI Models — split layout */}
-      <SplitSlide graphic={null} graphicPosition="left">
+      {/* Slide 1: AI/LLMs — split layout with engine graphic */}
+      <SplitSlide graphic={<img src={AiEnginesGraphic} alt="AI Engines" />} graphicPosition="left">
         <Markdown>{modelsContent}</Markdown>
       </SplitSlide>
 
